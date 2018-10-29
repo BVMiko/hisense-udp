@@ -239,7 +239,7 @@ class HisenseTV(object):
 
 def usage():
 	print ("-l (--list):	Send a broadcast to discover available devices\n")
-	print ("-d (--device):	[INCOMPLETE] Pass specific device IP address (useful if more than one on the network)\n")
+	print ("-d (--device):	Pass specific device IP address (useful if more than one on the network)\n")
 	print ("any other input(s) are considered commands to send to the TV\n")
 	sys.exit()
 
@@ -256,7 +256,7 @@ def main(argv):
 			print(HisenseTV.discover())
 			sys.exit()
 		elif opt in ("-d", "--device"):
-			device = args
+			device = arg
 	if device == None:
 		devices = HisenseTV.discover()
 		if (len(devices) == 0):
